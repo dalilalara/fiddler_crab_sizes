@@ -3,9 +3,18 @@ title: "Branches Practice"
 format: html
 editor: visual
 ---
+
 ```{r}
 library(lterdatasampler)
+library(tidyverse)
+library(ggplot2)
 
 #pie_crab
 ```
 
+```{r}
+
+
+ggplot(data = pie_crab, aes( x = size, y = latitude)) +
+  geom_point()
+```
