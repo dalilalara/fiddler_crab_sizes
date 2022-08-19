@@ -2,6 +2,10 @@
 title: "Branches Practice"
 format: html
 editor: visual
+execute: 
+  echo: false
+  warning: false
+  message: false 
 ---
 
 ```{r}
@@ -13,8 +17,18 @@ library(ggplot2)
 ```
 
 ```{r}
-
-
 ggplot(data = pie_crab, aes( x = size, y = latitude)) +
-  geom_point()
+  geom_point() +
+  labs(caption = "this is my caption" )
 ```
+
+
+```{r}
+pie_crab |>
+  group_by(site) |>
+  summarize(mean = round(mean(size),2),
+             sd = sd(size),
+            count = n())
+  
+```
+
