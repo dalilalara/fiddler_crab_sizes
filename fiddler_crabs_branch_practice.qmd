@@ -12,6 +12,7 @@ execute:
 library(lterdatasampler)
 library(tidyverse)
 library(ggplot2)
+library(kableExtra)
 
 #pie_crab
 ```
@@ -22,13 +23,12 @@ ggplot(data = pie_crab, aes( x = size, y = latitude)) +
   labs(caption = "this is my caption" )
 ```
 
-
 ```{r}
 pie_crab |>
   group_by(site) |>
   summarize(mean = round(mean(size),2),
              sd = sd(size),
-            count = n())
+            count = n()) |> 
+  kable(col.names = c("site", "Mean crab width(mm)", "SD crab width (mm)", "count"))
   
 ```
-
