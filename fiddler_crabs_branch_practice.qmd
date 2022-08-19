@@ -1,5 +1,5 @@
 ---
-title: "Branches Practice"
+title: "Fiddler Crabs Data Exploration"
 format: html
 editor: visual
 execute: 
@@ -17,12 +17,15 @@ library(kableExtra)
 #pie_crab
 ```
 
+The graph below looks at the pie_crab data set representing the crabs sizes across latitudes. 
+
 ```{r}
 ggplot(data = pie_crab, aes( x = size, y = latitude)) +
   geom_point() +
   labs(caption = "this is my caption" )
 ```
 
+The table below looks at the crabs mean, standard deviation, and count by site. 
 ```{r}
 pie_crab |>
   group_by(site) |>
